@@ -1,9 +1,7 @@
 #!/bin/bash
-userName="travis-code"
 
 ls
 
 git add .
 git commit -m "auto update commit"
 git push origin master
-echo $userName
