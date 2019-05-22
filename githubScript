@@ -5,5 +5,5 @@ ls
 
 git add .
 git commit -m "auto update commit"
-
-echo $userName
+git push origin master
+echo enter $userName as username
