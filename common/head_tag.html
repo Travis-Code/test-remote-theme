@@ -1,9 +1,9 @@
 <!-- put all javascript code here will load in </header> -->
-
 <script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/foobar">
-  <div class="redBoxTest"></div>
+    <div class="redBoxTest">
+		<h2 class="x-title">Hey<span id="logged-in-user"></span>! Welcome to the HEPF Member Portal</h2>
+  </div>
 </script>
-
 <script type="text/discourse-plugin" version="0.8.18">
     if(api.getCurrentUser() != null) {
         $("#logged-in-user").text(" " + api.getCurrentUser().username);
