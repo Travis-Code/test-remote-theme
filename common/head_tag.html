@@ -2,6 +2,7 @@
 
 <script type="text/discourse-plugin" version="0.8.18">
     if(api.getCurrentUser() != null) {
+    	console.log(api.getCurrentUser());
         $("#logged-in-user").text(" " + api.getCurrentUser().username);
     }
 </script>
@@ -10,10 +11,14 @@
     <div class="redBoxTest"><h2 class="x-title">Hey<span id="logged-in-user"></span>! Welcome to the HEPF Member Portal</h2></div>
 </script>
 
+
+<!-- NOT WORKING -->
 <script type="text/x-handlebars" data-template-name="/connectors/category-title-before/foobar2">
   <div style="height: 225px; width: 225px;background: blue"></div>
 </script>
 
+
+<!-- WORKING show a yellow box next to all categories dropdown -->
 <script type="text/x-handlebars" data-template-name="/connectors/bread-crumbs-right/foobar3">
 	 <div style="height: 125px; width: 125px;background: yellow"></div>
 </script>
