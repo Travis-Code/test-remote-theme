@@ -1,20 +1,464 @@
-.hello-world-banner {
-    height: 300px;
+
+
+@import "common/foundation/variables";
+// fix for responsive tbody bug that makes excerpts extend past the custom box layouts.
+//https://meta.discourse.org/t/custom-layouts-plugin/55208/231
+.topic-list-item .discourse-tags {
+  display:  unset;
+}
+
+.nav-container .locations-map:not(.expanded) {
+  height: 150px !important;
+}
+
+.subcategories{
+ color:red;   
+}
+
+
+h1{
+    font-size:18px;
+    font-weight:bold;
+}
+
+h3{
+    font-size:15px;
+    font-weight:normal;
+}
+
+//Composer Height
+#reply-control.open.edit-title{    
+    height:600px;
+}
+
+//Composer Help Button Styling
+.modal-inner-container {
+    max-width: 950px;
+    height: 820px;
+}
+.composer-help-modal {
+  .composer-help-content {
+    max-height: 750px;
+  }
+}
+
+.composer_help_button .btn .no-text .btn-icon .ember-view{
+    height: 20px;
+
+}
+
+//test excerpt customization
+.topic-list .topic-excerpt {
+    // font-size: 01.0em;
+    font-size: 15px;
+    margin-top: 15px;
+    color: #646464;
+    //color: black;
+
+    //word-wrap: normal;
+    padding-right: 0px;
+}
+
+//selects any .gov anchor text and italicizes
+// [href*=".gov"]{
+//     font-style: italic;
+// }
+
+
+
+$headerHeight: 70px;
+
+// SITE LOGO ----------------------------------------------------
+.d-header #site-logo{
+    // height:70px;   
+    height: $headerHeight;
+    
+}
+
+
+// DATE IN EVENTS & MEETINGS
+.date{
+    font-size: 15px;
+    // font-weight: bold;
+
+}
+
+
+// vote poll numbers is hidden on events post
+div.poll .poll-info{
+    width:0px;
+    min-width:0px;
+    // visibility:hidden;
+    border:0px;
+    // font-size:0px;
+    padding:0px;
+}
+div.poll .poll-info .info-number{
+    font-size:0px;
+}
+div.poll .poll-info p{
+    margin:0px;
+}
+div.poll .poll-info .info-label{
+    visibility:hidden;
+}
+// poll text "I will be attending this event"
+div.poll li{
+    font-size:15px;
+    margin:auto;
+}
+div.poll .poll-container{
+    display:initial;
+}
+div.poll .results>li {
+    cursor: default;
+    padding: 20px 39px 1px 10px;
+}
+
+.main-content.topic.has-sidebars .topic-body .poll .poll-container{
+    margin:auto;
     width: 100%;
-    background: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.topic-list .main-link a.title {
+    padding: 0;
+    font-size: 17px;
+    line-height: 2px;
+}
+
+
+
+
+.d-header{
+    height:90px;
+}
+
+//test css for custom wizard
+// .wizard-column .wizard-btn.primary {
+//     background-color: #9477cb;
+    
+//     &:hover {
+//         background-color: #b19cd9;
+//     }
+// }
+
+// width height of the survey
+.wizard-column{
+    width:1000px;
+    min-width:500px;
+    max-height:1500px;
+    min-height:400px;
+}
+
+.wizard-field .textarea-field .talent_1 .ember-view{
+    margin-bottom:50px;
+    margin-top:40px;
+}
+
+
+
+.wizard-step-contents{
+background-image: url("https://staging.travishiphepf.com/uploads/default/original/1X/27414bbba8687f778cbb2f8bf72eb6da7f7c475e.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  margin-right: 200px;
+  background-size: 220px 50px;
+}
+
+.wizard-column .wizard-field {
     margin-bottom: 1em;
 }
 
-.hello-world {
-    font-size: 8em;
-    color: white;
+.wizard-column .wizard-step-description {
+    margin-bottom: 0;
 }
 
-.redBoxTest {
-	height: 200px;
-	width: 200px;
-	background: red;
+.wizard-step-form .wizard-step-step_2 .ember-view{
+    height:1600px;
 }
+
+// padding for next/back bar on survey
+.wizard-step-footer{
+    // padding-top:300px;
+}
+
+
+// IMPORTANT DISABLE IF YOU WANT TO CHANGE USER FIELDS!important!important
+// hides sign up user fields such as title, organization etc. 
+// .user-fields{
+//     visibility:hidden;
+//     width: 0px;
+//     height: 0px;
+//     margin-left:-30px;
+// }
+
+.nav-item-faq{
+    visibility:hidden;
+    width: 0px;
+    height: 0px;
+    margin-left:-30px;
+    
+}
+
+
+.nav-item-tos{
+    visibility:hidden;
+    width: 0px;
+    height: 0px;
+    margin-left:-30px;
+}
+
+.top-menu{
+    font-size:13px;
+}
+
+// category names
+.category-name{
+    font-size:17px;   
+}
+
+.d-header.clearfix.hide-menus{
+    // visibility:hidden;
+}
+
+.d-header {
+    top: auto;
+}
+
+.docked .d-header {
+    top: 0;
+}
+
+
+.main-content.has-sidebars .list-controls .nav {
+    margin-bottom:20px;
+    
+}
+
+// EVENTS LOCATION AND ADDRESS COMPOSER CSS----------------------------
+
+.composer-controls-event .event-label {
+    border-radius:0px;
+    padding:0px;
+    
+}
+
+// event location -----------------------------------------------
+.location-details .location-label-container .location-label{
+    line-height: 20px;
+    max-width: 100%;
+    font-size:15px;
+}
+.location-label .ember-view{
+    font-size:15px;
+}
+
+.event-label .ember-view{
+    font-size:15px;
+    flex-wrap: nowrap;
+}
+
+// .select-kit .single-select .combobox .combo-box .category-chooser .has-selection .has-reached-minimum .ember-view{
+//     min-width: 500px;
+// }
+
+.category-input{
+    flex-basis: 50%;
+}
+
+#reply-control .reply-area.with-tags .title-and-category.show-event-controls .mini-tag-chooser {
+    flex-basis: 50%;
+}
+
+// RIGHT CUSTOM WIDGET -----------------------------------------
+.rightWidgetCustom{
+    background:#ceeae8;
+    padding:20px;
+}
+
+// hide MAIL ICON on widget
+// .widget-link.user-pms-link{
+//         margin-left:-30px;
+
+//     visibility:hidden;
+// }
+
+
+a.button {
+  padding: 5px 8px;
+//   color-size: $color-down-1;
+  width:250px;
+  height:50px;
+  color:white;
+  background: #00a496;
+  border-radius:0px;
+  color-size:20px;
+}
+
+//Invites button
+.user-profile .profile-actions>.btn, .user-profile .profile-actions .topic-notifications-button{
+    border-radius:0px;
+}
+
+// BUTTONS CSS ---------------------------------------------------
+#create-topic{
+  font-size: $font-down-1;
+//   height:50px;
+  color:white;
+  background: #00a496;
+  border-radius:0px;
+   font-size:15px;
+//   margin-left: 50px;
+//   margin-bottom:15px;
+//   margin-right:10px;
+}
+
+//edit button on nav bar
+.btn-default.edit-category.btn.btn-icon-text.ember-view{
+    // margin-top:10px;
+}
+
+
+// date label container see above for font size
+// .event-label{
+//     padding:20px;  
+//     font-size: 20px;
+
+// }
+
+// add to calendar button
+.add-to-calendar .ember-view{
+    margin-left:10px;
+    width:500px;
+}
+
+
+//thumbnail
+.thumbnail{
+    margin-right:20px;
+}
+
+
+// small button size for show map on events page.
+.btn-small {
+  padding: 3px 6px;
+  font-size: $font-down-1;
+  width:170px;
+  color:white;
+  line-height:20px;
+  background: #00a496;
+  border-radius:0px;
+  font-size:15px;
+}
+
+
+
+.widget-link.btn.btn-small{
+   color:white;   
+}
+
+
+
+// hide share, flag, bookmark, reply buttons----------------------
+// .btn-default.share.btn.btn-icon-text.ember-view {
+//     width: 0px;
+//     margin-left:-30px;
+//     visibility: hidden;
+// }
+//.btn-default.flag-topic.btn.btn-icon-text.ember-view {
+    // width: 0px;
+    // margin-left:-30px;
+    // visibility: hidden;
+//}
+.btn-default.bookmark.btn.btn-icon-text.ember-view {
+    width: 0px;
+    margin-left:-30px;
+    visibility: hidden;
+}
+// reply button
+// .btn-primary.create.btn.btn-icon-text.ember-view {
+//     width: 0px;
+//     margin-left:-30px;
+//     visibility: hidden;
+// }
+// .topic-footer-main-buttons{
+//     width: 0px;
+//     height:0px;
+//     margin-left:-30px;
+//     visibility: hidden; 
+// }
+
+
+
+
+//bottom reply button---------------------------------------------------------------
+
+.btn.btn-icon-text.btn-primary.create.ember-view{
+    // height:60px;
+    // width:150px;
+    border-radius: 0px;
+    background: #00a496;
+    color:white;
+}
+
+
+
+
+//---------------------------------------------------------------
+
+
+
+//custom edit reply button
+.widget-button.btn-flat.reply.create.fade-out.btn-icon-text {
+    height:60px;
+    width:150px;
+    border-radius: 0px;
+    // background: #00a496;
+    // color:white;
+}
+
+//---------------------------------------------------------------
+
+
+
+.category-boxes .category-box, .category-boxes-with-topics .category-box {
+    height: 280px;
+    background:#ceeae8;
+
+}
+
+body:not([class*='category-']) #create-topic {
+    display: none;
+}
+
+body.tags-page #create-topic {
+    display: block;
+}
+
+.headerLink {
+  list-style: none;
+  a {
+    padding: 6px 10px;
+    color: $primary;
+    font-size: $font-up-1;
+  }
+}
+
+
+.d-header {
+  &.hide-menus {
+    .headerLink:not(.keep) {
+       display: none;
+    }
+  }
+  .header-buttons {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.desktop-view .vmo,
+.mobile-view .vdo {
+   display: none !important;
+}
+
