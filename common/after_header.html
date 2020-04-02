@@ -1,2 +1,79 @@
 <!--will show up After Header-->
 
+<!-- custom header navigation links -->
+<div class="custom-header">
+    <div id="top-navbar">
+        <ul class="nav nav-pills" style="margin-bottom:20px; padding-left:80px; margin-top:10px; color:white; background-color:#00a496; font-size:12px;">
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/user-guide" style="color:white;">Welcome & User Guide</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/membership-files" style="color:white;">Membership Files</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/members" style="color:white;">Members</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/planning" style="color:white;">Planning</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/peer-exchange" style="color:white;">Peer Exchange</a>
+            </li>
+
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/events-meetings" style="color:white;">Events & Meetings</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/discussion" style="color:white;">Q & A</a>
+            </li>
+            <li class="top-navbar-links">
+                <a href="https://staging.travishiphepf.com/c/updates-documents" style="color:white;">Updates &amp; Documents</a>
+            </li>
+       
+        </ul>
+    </div>
+</div>
+
+
+
+<!-- 
+<script type="text/discourse-plugin" version="0.8.20">
+let customHeaderLinks = settings.Custom_header_links;
+
+customHeaderLinks.split("|").map(i => {
+  let seg = $.map(i.split(","), $.trim),
+    linkText = seg[0],
+    linkTitle = seg[1],
+    linkHref = seg[2],
+    deviceClass = "." + seg[3],
+    linkTarget = seg[4] === "self" ? "" : "_blank",
+    keepOnScrollClass = seg[5] === "keep" ? ".keep" : "";
+
+  api.decorateWidget("header-buttons:before", helper => {
+    return helper.h(
+      "li.headerLink" + deviceClass + keepOnScrollClass,
+      helper.h(
+        "a",
+        {
+          href: linkHref,
+          title: linkTitle,
+          target: linkTarget
+        },
+        linkText
+      )
+    );
+  });
+});
+
+api.decorateWidget("home-logo:after", helper => {
+  let titleVisible = helper.attrs.minimized;
+  if (titleVisible) {
+    $(".d-header").addClass("hide-menus");
+  } else {
+    $(".d-header").removeClass("hide-menus");
+  }
+});
+</script>
+-->
+
+<!-- targets category and changes + New Topic Button to display new text. -->
