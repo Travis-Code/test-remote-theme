@@ -1,33 +1,137 @@
-<!-- put all javascript code here will load in </header> -->
+<!-- TEST SHOW RED SQUARES ABOVE CATEGORY TITLE -->
+<!--
+<script type="text/x-handlebars" data-template-name="/connectors/category-title-before/foobar2">
+  <div style="height: 25px; width: 25px;background: red"></div>
+</script>
+-->
 
-<script type="text/discourse-plugin" version="0.8.18">
-    if(api.getCurrentUser() != null) {
-    	console.log("current user: " + api.getCurrentUser().username);
-        $("#logged-in-user").text(" " + api.getCurrentUser().username);
-        console.log("values in api.getCurrentUser() -----------------------");
-        console.log(api.getCurrentUser());
-        console.log("end api.getCurrentUser() -----------------------");
+MEMBER PORTAL BETA Version 2.0
+
+<script type=text/javascript>
+    console.log("test ----------------------------");
+
+
+    var getExcerpt = document.getElementsByClassName("topic-excerpt");
+    console.log(getExcerpt);
+    console.log("excerpt length: " + getExcerpt.length);
+    console.log(getExcerpt.innerHTML);
+
+    console.log("test ----------------------------");
+
+</script>
+
+
+<!--add tags to discourses' nav bar-->
+<script>
+  Discourse.ExternalNavItem = Discourse.NavItem.extend({
+    href : function() {
+      return this.get('href');
+    }.property('href')
+  });
+
+  I18n.translations.en.js.filters.tags = { title: "Tags", help: "Navigate to hepf Tags" };
+
+  Discourse.NavItem.reopenClass({
+    buildList : function(category, args) {
+      var list = this._super(category, args);
+      if(!category || category) {
+        list.push(Discourse.ExternalNavItem.create({href: '/tags', name: 'tags'}));
+      }
+      return list;
     }
-</script>
-
-<script type="text/x-handlebars" data-template-name="/connectors/topic-above-post-stream/testNameAboveBar">
-    <div class="redBoxTest"><h2 class="x-title">Hey<span id="logged-in-user"></span>! Welcome to the HEPF Member Portal</h2></div>
+  });
 </script>
 
 
-<!-- WORKING shows greenbox next to all categories view -->
-<script type="text/x-handlebars" data-template-name="/connectors/user-fields/category-title-before/foobar2a">
-  <div style="height: 225px; width: 225px;background: green"></div>
+<!--change submit buttons-->
+<script type="text/discourse-plugin" version="0.8">
+const i18nTopicLable = I18n.lookup("topic.create");
+api.modifyClass("component:create-topic-button", {
+  didInsertElement: function() {
+    var button = $(this),
+      category = button[0].parentView.get("category"),
+      label = button[0].label,
+      newTopicLabel = "topic.create",
+      buttonText = "";
+
+    console.log(button);
+    
+    
+    if (category) {
+      // gets category you're in
+      categoryName = category.name;
+      console.log("you're in this category: " + categoryName);
+
+
+      if (label != newTopicLabel) {
+        return;
+      } else {
+        switch (categoryName) {
+          case "Events & Meetings": // category name
+            buttonText = "Add Event"; // button text
+            break;
+           repeat
+          case "Q&A Discussion":
+            buttonText = "Submit Question";
+            break;
+          case "Membership Documents":
+            buttonText = "Add Document";
+            break;
+          case "Create Topic":
+            buttonText = "Submit";
+            break;
+          // add more above this line
+          default:
+            buttonText = i18nTopicLable;
+        }
+        // below creates <span class="d-button-label">Submit an Event</span>
+        $("#create-topic .d-button-label").text(buttonText);
+        $("#ember319 .d-button-label").text(buttonText);
+        
+      }
+    }
+  }
+});
 </script>
 
 
-<!-- WORKING show a yellow box next to all categories dropdown -->
-<script type="text/x-handlebars" data-template-name="/connectors/bread-crumbs-right/foobar3">
-	 <div style="height: 125px; width: 125px;background: yellow"></div>
+<!--// <i class="fas fa-home"></i>-->
+
+<script type="text/discourse-plugin" version="0.8">
+    api.replaceIcon('d-watching', 'eye');
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+    api.replaceIcon('envelope', 'comment');
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+    api.replaceIcon('bars', 'home');
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+    api.replaceIcon('d-icon-heart', 'thumbs-up');
+    api.replaceIcon('d-icon-heart', 'thumbs-o-up');
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+    api.replaceIcon('d-liked', 'thumbs-up');
+    api.replaceIcon('d-unliked', 'thumbs-o-up');
 </script>
 
 
-<script type="text/discourse-plugin" version="0.1">
-  // you can use the `api` object here!
-  api.decorateCooked($elem => $elem.css({ backgroundColor: 'yellow' }));
+
+
+<script type=text/javascript>
+
+    console.log('ID : ' + $('.topic-excerpt').text());
+    console.log('ID : ' + $('.topic-excerpt').html());
+    
+    
+    console.log('ID : ' + $('.topic-title').text());
+    console.log('ID : ' + $('.topic-title').html());
+    
+
 </script>
+
+
